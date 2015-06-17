@@ -75,7 +75,7 @@ var languageData = {
 				"name": "Question 15",
 				"question": "What is your favorite group or who is your favorite musician?",
 				"answer": "Jason Aldean",
-			},
+			}
 		]
 	}
 };

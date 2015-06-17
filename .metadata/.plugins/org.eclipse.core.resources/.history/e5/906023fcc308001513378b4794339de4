@@ -1,0 +1,168 @@
+var languageData = {
+	"About Me Questions":{
+		"Attribute List":[
+			{
+				"name": "Question 1",
+				"question": "What is your name?",
+				"answer": "Zachary Gover",
+			},
+			{
+				"name": "Question 2",
+				"question": "What is your chat user name, including the host?",
+				"answer": "Skype: zachary1748",
+			},
+			{
+				"name": "Question 3",
+				"question": "In which time zone do you reside?",
+				"answer": "Central Standard Time",
+			},
+			{
+				"name": "Question 4",
+				"question": "Why are you in the Mobile Development Program?",
+				"answer": "Society is moving towards mobile and everyone wants to be able to takes things on the go.",
+			},
+			{
+				"name": "Question 5",
+				"question": "How comfortable are you with Javascript?",
+				"answer": "Very comfortable",
+			},
+			{
+				"name": "Question 6",
+				"question": "How comfortable are you with Titanium?",
+				"answer": "Comfortable; Growing everyday.",
+			},
+			{
+				"name": "Question 7",
+				"question": "What is your favorite food?",
+				"answer": "Pizza and BBQ",
+			},
+			{
+				"name": "Question 8",
+				"question": "Do you have any pets?",
+				"answer": "2 Bearded Dragons; One male and one female.",
+			},
+			{
+				"name": "Question 9",
+				"question": "What are your hobbies?",
+				"answer": "Web Design & Development, Mobile Development, Frisbee Golf and Video Games.",
+			},
+			{
+				"name": "Question 10",
+				"question": "What are your hobbies?",
+				"answer": "Web Design & Development, Mobile Development, Frisbee Golf and Video Games.",
+			},
+			{
+				"name": "Question 11",
+				"question": "What are your hobbies?",
+				"answer": "Web Design & Development, Mobile Development, Frisbee Golf and Video Games.",
+			},
+			{
+				"name": "Question 12",
+				"question": "What is your favorite movie?",
+				"answer": "Forrest Gump.",
+			},
+			{
+				"name": "Question 13",
+				"question": "Who is your favorite actor/actress?",
+				"answer": "Jason Statham",
+			},
+			{
+				"name": "Question 14",
+				"question": "What is your favorite TV show?",
+				"answer": "Rules of Engagment",
+			},
+			{
+				"name": "Question 15",
+				"question": "What is your favorite group or who is your favorite musician?",
+				"answer": "Jason Aldean",
+			},
+		]
+	}
+};
+
+var showDescription = function(dataSource){
+	var descriptionWindow = Ti.UI.createWindow ({
+		title: dataSource.title,
+		backgroundColor: "rgb(199,102,91)"
+	});
+	
+	var charImage = Ti.UI.createImageView ({
+		image: "images/crew/" + dataSource.image,
+		height: 200,
+		left: 20,
+		top: 20,
+		left: 0
+	});
+	
+	var charStats = Ti.UI.createView ({
+		right: 20,
+		top: 50,
+		width: "40%",
+		layout: "vertical"
+	});
+	
+	var descriptionText = Ti.UI.createLabel ({
+		text: dataSource.text,
+		top: charImage.top + charImage.height + 20,
+		left: 20,
+		right: 20,
+		color: "333",
+		font: {fontSize: "16", fontFamily: "Arial"}
+	});
+	
+	charStats.add(stupidityLabel, stupidityBG, courageLabel, courageBG);
+	descriptionWindow.add(charImage, charStats, descriptionText);
+	navWin.openWindow(descriptionWindow);
+};
+
+var crewSections = [];
+for (var n in languageData){
+	// Custom Header
+	var customHeader = Ti.UI.createView ({
+		height: 40
+	});
+	var chText = Ti.UI.createLabel ({
+		text: n,
+		left: 10,
+		font: {fontWeight: "bold"}
+	});
+	customHeader.add(chText);
+	
+	// Custom Footer
+	var customFooter = Ti.UI.createView ({
+		height: 30
+	});
+	var cfText = Ti.UI.createLabel ({
+		text: "List of questions and answers",
+		left: 10,
+		font: {fontSize: 13},
+		color: 333
+	});
+	customFooter.add(cfText);
+	
+	// Create Section and rows
+	var aboutMeSection = Ti.UI.createTableViewSection ({
+		headerView: customHeader,
+		footerView: customFooter
+	});
+	for(var item in languageData[n]){
+		for (var i = 0; i<languageData[n][item].length; i++){
+			var currentRow = Ti.UI.createTableViewRow ({
+				title: languageData[n][item][i].name,
+				question: languageData[n][item][i].question,
+				answer: languageData[n][item][i].answer,
+				hasChild: true,
+			});
+			
+			aboutMeSection.add(currentRow);
+		}
+	}
+	crewSections.push(currentSection);
+}
+crewList.setData(crewSections);
+crewList.addEventListener("click", function(event){
+	showDescription(event.source);
+});
+
+win.add(crewList);
+navWin.openWindow(win);

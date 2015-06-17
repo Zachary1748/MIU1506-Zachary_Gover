@@ -1,0 +1,129 @@
+var languageData = {
+	"The Mighty Crew":{
+		"Crew List":[
+			{
+				"name": "Marge Simpson",
+				"description": "Marge Simpson (née Bouvier) is a fictional character in the American animated sitcom The Simpsons and part of the eponymous family. She is voiced by Julie Kavner and first appeared on television in The Tracey Ullman Show short Good Night on April 19, 1987.",
+				"image": "Marge_Simpson.png",
+				"stupidity": 20,
+				"courage": 10
+			},
+			{
+				"name": "Peter Griffin",
+				"description": "Peter Griffin is the main character of the American animated sitcom Family Guy. He is voiced by cartoonist Seth MacFarlane and first appeared on television, along with the rest of the family, in the 15-minute short on December 20, 1998.",
+				"image": "Peter_Griffin.png",
+				"stupidity": 80,
+				"courage": 90
+			},
+			{
+				"name": "Patrick Star",
+				"description": "Patrick Star is a fictional character in the American animated television series SpongeBob SquarePants. He is voiced by actor Bill Fagerbakke, who also does the voices of numerous other characters on the show.",
+				"image": "Patrick_Star.png",
+				"stupidity": 50,
+				"courage": 20
+			}
+		]
+	}
+};
+
+function showCrew(){
+	var win = Ti.UI.createWindow({
+		title: 'Crew'
+	});
+	
+	var crewList = Ti.UI.createTableView ({
+		backgroundColor: "rgb(199,102,91)"
+	});
+	
+	if (Ti.Platform.name === "iPhone OS") {
+		crewList.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+	}
+	
+	var showDescription = function(dataSource){
+		var descriptionWindow = Ti.UI.createWindow ({
+			title: dataSource.title,
+			backgroundColor: "rgb(199,102,91)"
+		});
+		
+		var charImage = Ti.UI.createImageView ({
+			image: "images/crew/" + dataSource.image,
+			height: 200,
+			left: 20,
+			top: 20,
+			left: 0
+		});
+		
+		var charStats = Ti.UI.createView ({
+			right: 20,
+			top: 50,
+			width: "40%",
+			layout: "vertical"
+		});
+		
+		var descriptionText = Ti.UI.createLabel ({
+			text: dataSource.text,
+			top: charImage.top + charImage.height + 20,
+			left: 20,
+			right: 20,
+			color: "333",
+			font: {fontSize: "16", fontFamily: "Arial"}
+		});
+		
+		charStats.add(stupidityLabel, stupidityBG, courageLabel, courageBG);
+		descriptionWindow.add(charImage, charStats, descriptionText);
+		navWin.openWindow(descriptionWindow);
+	};
+	
+	var crewSections = [];
+	for (var n in languageData){
+		// Custom Header
+		var customHeader = Ti.UI.createView ({
+			height: 40
+		});
+		var chText = Ti.UI.createLabel ({
+			text: n,
+			left: 10,
+			font: {fontWeight: "bold"}
+		});
+		customHeader.add(chText);
+		
+		// Custom Footer
+		var customFooter = Ti.UI.createView ({
+			height: 30
+		});
+		var cfText = Ti.UI.createLabel ({
+			text: "Listed crew is on active duty.",
+			left: 10,
+			font: {fontSize: 13},
+			color: 333
+		});
+		customFooter.add(cfText);
+		
+		// Create Section and rows
+		var currentSection = Ti.UI.createTableViewSection ({
+			headerView: customHeader,
+			footerView: customFooter
+		});
+		for(var item in languageData[n]){
+			for (var i = 0; i<languageData[n][item].length; i++){
+				var currentRow = Ti.UI.createTableViewRow ({
+					title: languageData[n][item][i].name,
+					question: languageData[n][item][i].question,
+					answer: languageData[n][item][i].answer,
+					hasChild: true,
+				});
+				
+				currentSection.add(currentRow);
+			}
+		}
+		crewSections.push(currentSection);
+	}
+	crewList.setData(crewSections);
+	crewList.addEventListener("click", function(event){
+		showDescription(event.source);
+	});
+	
+	win.add(crewList);
+	navWin.openWindow(win);
+}
+crewView.addEventListener("click", showCrew);

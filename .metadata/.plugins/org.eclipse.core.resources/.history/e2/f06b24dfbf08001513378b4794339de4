@@ -1,0 +1,21 @@
+var mainWindow = Ti.UI.createWindow ({
+	title: "Programming",
+	backgroundColor: "#f0f0f0",
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow ({
+	window: mainWindow
+});
+
+var languages = Ti.UI.createTableView ({
+	
+});
+
+if (Ti.Platform.name === "iPhone OS") {
+	languages.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+var neededFiles = require("externalResources");
+
+mainWindow.add(languages);
+navWindow.open();

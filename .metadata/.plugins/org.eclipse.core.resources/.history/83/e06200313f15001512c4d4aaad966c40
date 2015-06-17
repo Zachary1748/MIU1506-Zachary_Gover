@@ -1,0 +1,101 @@
+var listingData = {
+	"Front-End":{
+		"List of Languages":[
+			{
+				"name": "HTML",
+				"description": "Hypertext Markup Language, a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages."
+			},
+			{
+				"name": "CSS",
+				"description": "A cascading style sheet (CSS) is a Web page derived from multiple sources with a defined order of precedence where the definitions of any style element conflict."
+			},
+			{
+				"name": "jQuery",
+				"description": "jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. jQuery is the most popular JavaScript library in use today. jQuery is free, open-source software licensed under the MIT License."
+			}
+		]
+	},
+	"Back-End":{
+		"List of Languages":[
+			{
+				"name": "PHP",
+				"description": "PHP is a script language and interpreter that is freely available and used primarily on Linux Web servers. PHP, originally derived from Personal Home Page Tools, now stands for PHP: Hypertext Preprocessor, which the PHP FAQ describes as a 'recursive acronym.'"
+			},
+			{
+				"name": "C#",
+				"description": "C# is one of the programming languages designed for the Common Language Infrastructure. C# is intended to be a simple, modern, general-purpose, object-oriented programming language."
+			},
+			{
+				"name": "Java",
+				"description": "The Java programming language is a high-level language that can be characterized by all of the following buzzwords: Simple. Object oriented. Distributed. Multithreaded."
+			}
+		]
+	}
+};
+
+var showDescription = function(dataSource){
+	var descriptionWindow = Ti.UI.createWindow ({
+		title: dataSource.title,
+		backgroundColor: "fff"
+	});
+	var descriptionText = Ti.UI.createLabel ({
+		text: dataSource.text,
+		top: 30,
+		left: 20,
+		right: 20,
+		color: "333",
+		font: {fontSize: "16", fontFamily: "Arial"}
+	});
+	descriptionWindow.add(descriptionText);
+	navWindow.openWindow(descriptionWindow);
+};
+
+var listingSections = [];
+for (var n in listingData){
+	// Custom Header
+	var customHeader = Ti.UI.createView ({
+		height: 40
+	});
+	var chText = Ti.UI.createLabel ({
+		text: n,
+		left: 10,
+		font: {fontWeight: "bold"}
+	});
+	customHeader.add(chText);
+	
+	// Custom Footer
+	var customFooter = Ti.UI.createView ({
+		height: 30
+	});
+	var cfText = Ti.UI.createLabel ({
+		text: "Descriptions from Wikipedia",
+		left: 10,
+		font: {fontSize: 13},
+		color: 333
+	});
+	customFooter.add(cfText);
+	
+	// Create Section and rows
+	var currentSection = Ti.UI.createTableViewSection ({
+		headerView: customHeader,
+		footerView: customFooter
+	});
+	for(var item in listingData[n]){
+		for (var i = 0; i<languageData[n][item].length; i++){
+			var currentRow = Ti.UI.createTableViewRow ({
+				title: languageData[n][item][i].name,
+				text: languageData[n][item][i].description,
+				hasChild: true
+			});
+			
+			//currentRow.addEventListener("click", showDescription);
+			
+			currentSection.add(currentRow);
+		}
+	}
+	listingSections.push(currentSection);
+}
+listings.setData(languageSections);
+listings.addEventListener("click", function(event){
+	showDescription(event.source);
+});
