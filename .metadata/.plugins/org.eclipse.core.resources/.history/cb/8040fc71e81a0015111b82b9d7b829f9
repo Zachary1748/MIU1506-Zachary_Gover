@@ -1,0 +1,85 @@
+// Login Screen Begin
+var loginScreen = Ti.UI.createWindow({
+	backgroundColor: "#0099FF",
+	layout: "Vertical"
+});
+
+// top bar background
+var statusBarBG = Ti.UI.createView ({
+	backgroundColor: "#007ACC",
+	left: 0, right: 0, height: 20
+});
+
+// Add a scroll view so when the keyboard pops out, it won't cut off the input fields
+var loginScrollView = Ti.UI.createScrollView ({
+	contentWidth: "100%",
+	contentHeight: "100%",
+	layout: "vertical"
+});
+
+// Login Input
+var loginInput = Ti.UI.createTextField ({
+	hintText: "Username",
+	left: "10%", right: "10%", height: 40,
+	top: "30%",
+	paddingLeft: 15,
+	backgroundColor: "#E6E6E6"
+});
+
+// Password Input
+var passwordInput = Ti.UI.createTextField ({
+	hintText: "Password",
+	left: "10%", right: "10%", height: 40,
+	top: 15,
+	paddingLeft: 15,
+	passwordMaks: true,
+	backgroundColor: "#E6E6E6"
+});
+
+// Submit Button
+var loginBtn = Ti.UI.createView ({
+	left: "10%", right: "10%", height: 40,
+	top: 15,
+	backgroundColor: "#70B8FF"
+});
+
+var loginBtnText = Ti.UI.createLabel ({
+	text: "Login",
+	color: "#333333"
+});
+loginBtn.add(loginBtnText);
+// Login Screen End
+
+// Main applicatio window after login has been verified
+var mainWindow = Ti.UI.createWindow ({
+	title: "Utility Application",
+	backgroundColor: "#f0f0f0",
+});
+
+// Creates the navigation 
+var navWindow = Ti.UI.iOS.createNavigationWindow ({
+	window: mainWindow
+});
+
+// Add the new btn into the menu
+var newBtn = Ti.UI.createLabel ({
+	text: "New",
+	height: 40, right: 5, top: 20
+});
+navWindow.add(newBtn);
+
+// JSON data table
+var listings = Ti.UI.createTableView ({});
+
+if (Ti.Platform.name === "iPhone OS") {
+	listings.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+var neededFiles = require("externalResources");
+
+mainWindow.add(listings);
+loginScrollView.add(loginInput, passwordInput, loginBtn);
+loginScreen.add(loginScrollView);
+loginScreen.open();
+
+

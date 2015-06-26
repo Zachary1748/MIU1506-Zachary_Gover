@@ -1,0 +1,41 @@
+var loginScreen = Ti.UI.createWindow({
+	backgroundColor: "#0099FF",
+	layout: "Vertical"
+});
+
+var statusBarBG = Ti.UI.createView ({
+	backgroundColor: "#007ACC",
+	left: 0, right: 0, height: 20
+});
+
+var loginScrollView = Ti.UI.createScrollView ({});
+
+var loginInput = Ti.UI.createTextField ({
+	hintText: "Username",
+	left: "10%", right: "10%", height: 40,
+	top: 30%
+});
+
+var mainWindow = Ti.UI.createWindow ({
+	title: "Utility Application",
+	backgroundColor: "#f0f0f0",
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow ({
+	window: mainWindow
+});
+
+var listings = Ti.UI.createTableView ({
+	
+});
+
+if (Ti.Platform.name === "iPhone OS") {
+	listings.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+var neededFiles = require("externalResources");
+
+// mainWindow.add(listings);
+// navWindow.open();
+loginScreen.add(statusBarBG);
+loginScreen.open();

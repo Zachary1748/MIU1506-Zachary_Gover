@@ -1,9 +1,11 @@
 =run
 1506_AboutMe_Gover_Zachary\:launchMode=run
 1506_AboutMe_Gover_Zachary\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.F52BFCFA-9B3E-42E3-A3D2-8D3110E2B117
+1506_UtilityApp_Gover_Zachary\:launchMode=run
+1506_UtilityApp_Gover_Zachary\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.86B15E53-AD6B-437B-AA0F-8AF48CD7A056
 Gover_Zachary_InformationalApp_1506\:launchMode=run
 Gover_Zachary_InformationalApp_1506\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.56271EEB-A07E-43A7-A5BF-058B46B9221F
-LAST_LAUNCH_TIMESTAMP=1434673049581
+LAST_LAUNCH_TIMESTAMP=1435201696768
 eclipse.preferences.version=1
 preference.show.console.onError=false
 preference.studio.perspective.version=103

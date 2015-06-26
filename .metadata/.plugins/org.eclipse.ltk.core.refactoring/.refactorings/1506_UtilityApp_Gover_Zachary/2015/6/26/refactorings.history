@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;1506_UtilityApp_Gover_Zachary/Resources/externalResources.jsw&apos; to &apos;externalResources.js&apos;" description="Rename resource &apos;externalResources.jsw&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Resources/externalResources.jsw" name="externalResources.js" stamp="1435197673602" updateReferences="true"/>
+</session>
