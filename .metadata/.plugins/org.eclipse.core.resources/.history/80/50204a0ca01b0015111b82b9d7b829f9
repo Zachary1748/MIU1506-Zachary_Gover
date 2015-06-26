@@ -469,7 +469,6 @@ newBtn.addEventListener("click", function(){
 				engine: engine.value,
 				transmission: transmission.value,
 				fuelMileage: fuelMileage.value,
-				color: color.value,
 				bedType: bedType.value,
 				driveType: driveType.value,
 				condition: condition.value,

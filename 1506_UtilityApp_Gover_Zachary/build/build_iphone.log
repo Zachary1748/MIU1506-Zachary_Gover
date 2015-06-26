@@ -1,5 +1,5 @@
 
-Thu Jun 25 2015 19:38:35 GMT-0500 (CDT)
+Thu Jun 25 2015 20:01:33 GMT-0500 (CDT)
 
 Operating System
   Name                        = Mac OS X
@@ -21,7 +21,7 @@ Titanium SDK
   Target Platform             = iphone
 
 Command
-  /usr/local/bin/node /Users/Zachary/.appcelerator/install/4.0.1/package/node_modules/appc-cli-titanium/node_modules/titanium/bin/titanium build --platform iphone --log-level trace --sdk 4.0.0.GA --project-dir /Users/Zachary/Documents/Full Sail/MIU/Projects/1506_UtilityApp_Gover_Zachary --target simulator --ios-version 8.3 --device-family universal --deploy-type development --sim-type iphone --sim-version 8.3 --device-id 86B15E53-AD6B-437B-AA0F-8AF48CD7A056 --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49154 --plugin-paths /Users/Zachary/.appcelerator/install/4.0.1/package/node_modules --config-file /var/folders/01/tx145vt17bvd3hxgbx8l6rj00000gn/T/build-1435279112496.json --no-banner
+  /usr/local/bin/node /Users/Zachary/.appcelerator/install/4.0.1/package/node_modules/appc-cli-titanium/node_modules/titanium/bin/titanium build --platform iphone --log-level trace --sdk 4.0.0.GA --project-dir /Users/Zachary/Documents/Full Sail/MIU/Projects/1506_UtilityApp_Gover_Zachary --target simulator --ios-version 8.3 --device-family universal --deploy-type development --sim-type iphone --sim-version 8.3 --device-id D03466FC-0DFF-49F5-98A4-01DFCE0F16CE --skip-js-minify --no-colors --no-progress-bars --no-prompt --prompt-type socket-bundle --prompt-port 49154 --plugin-paths /Users/Zachary/.appcelerator/install/4.0.1/package/node_modules --config-file /var/folders/01/tx145vt17bvd3hxgbx8l6rj00000gn/T/build-1435280491307.json --no-banner
 
 [DEBUG]  Detecting modules in /Users/Zachary/Library/Application Support/Titanium/modules
 [DEBUG]  Detected android module: com.appcelerator.apm 1.1.1 @ /Users/Zachary/Library/Application Support/Titanium/modules/android/com.appcelerator.apm/1.1.1
@@ -58,8 +58,8 @@ Command
 [INFO]   Deploy type: development
 [INFO]   Building for target: simulator
 [INFO]   Building using iOS SDK: 8.3
-[INFO]   Building for iOS Simulator: iPhone 6
-[DEBUG]  UDID: 86B15E53-AD6B-437B-AA0F-8AF48CD7A056
+[INFO]   Building for iOS Simulator: iPhone 5
+[DEBUG]  UDID: D03466FC-0DFF-49F5-98A4-01DFCE0F16CE
 [DEBUG]  Simulator type: iphone
 [DEBUG]  Simulator version: 8.3
 [INFO]   Building for device family: universal
@@ -101,22 +101,19 @@ Command
 [INFO]   Processing Titanium namespace resources
 [DEBUG]  Copying /Users/Zachary/Library/Application Support/Titanium/mobilesdk/osx/4.0.0.GA/iphone/modules/ui/images => /Users/Zachary/Documents/Full Sail/MIU/Projects/1506_UtilityApp_Gover_Zachary/build/iphone/build/Debug-iphonesimulator/1506_UtilityApp_Gover_Zachary.app/modules/ui/images
 [INFO]   Skipping xcodebuild
-[INFO]   Finished building the application in 274ms
+[INFO]   Finished building the application in 273ms
 [INFO]   Launching iOS Simulator
-[DEBUG]  [ioslib] Removing old log file: /Users/Zachary/Library/Developer/CoreSimulator/Devices/86B15E53-AD6B-437B-AA0F-8AF48CD7A056/data/Containers/Data/Application/30D15998-CC3A-4D81-B2F5-42DBA887312E/Documents/57ab1f43-bade-4df9-9111-a81a81648ad4.log
-[DEBUG]  [ioslib] Executing: /Users/Zachary/Library/Application Support/Titanium/mobilesdk/osx/4.0.0.GA/node_modules/ioslib/lib/ios-sim "launch" "/Users/Zachary/Documents/Full Sail/MIU/Projects/1506_UtilityApp_Gover_Zachary/build/iphone/build/Debug-iphonesimulator/1506_UtilityApp_Gover_Zachary.app" "--verbose" "--xcode-dir" "/Applications/Xcode.app/Contents/Developer" "--udid" "86B15E53-AD6B-437B-AA0F-8AF48CD7A056" "--timeout" "180"
+[DEBUG]  [ioslib] Removing old log file: /Users/Zachary/Library/Developer/CoreSimulator/Devices/D03466FC-0DFF-49F5-98A4-01DFCE0F16CE/data/Containers/Data/Application/78ECB9DB-BEE5-4427-B99D-E36519AEB2E0/Documents/57ab1f43-bade-4df9-9111-a81a81648ad4.log
+[DEBUG]  [ioslib] Executing: /Users/Zachary/Library/Application Support/Titanium/mobilesdk/osx/4.0.0.GA/node_modules/ioslib/lib/ios-sim "launch" "/Users/Zachary/Documents/Full Sail/MIU/Projects/1506_UtilityApp_Gover_Zachary/build/iphone/build/Debug-iphonesimulator/1506_UtilityApp_Gover_Zachary.app" "--verbose" "--xcode-dir" "/Applications/Xcode.app/Contents/Developer" "--udid" "D03466FC-0DFF-49F5-98A4-01DFCE0F16CE" "--timeout" "180"
 [DEBUG]  [ioslib] Executing: osascript "/Users/Zachary/Library/Application Support/Titanium/mobilesdk/osx/4.0.0.GA/node_modules/ioslib/lib/iphone_sim_activate.scpt" "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app"
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] App Spec: <DTiPhoneSimulatorApplicationSpecifier 0x7fedcd2554a0> specified by app path /Users/Zachary/Documents/Full Sail/MIU/Projects/1506_UtilityApp_Gover_Zachary/build/iphone/build/Debug-iphonesimulator/1506_UtilityApp_Gover_Zachary.app
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] SDK Root: <DTiPhoneSimulatorSystemRoot 0x7fedcd239370> path=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] Creating named pipe at `/var/folders/01/tx145vt17bvd3hxgbx8l6rj00000gn/T//ios-sim-stderr-pipe-1435279115'
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] Creating named pipe at `/var/folders/01/tx145vt17bvd3hxgbx8l6rj00000gn/T//ios-sim-stdout-pipe-1435279115'
+[DEBUG]  [ioslib] [ios-sim] [DEBUG] App Spec: <DTiPhoneSimulatorApplicationSpecifier 0x7fec1b932520> specified by app path /Users/Zachary/Documents/Full Sail/MIU/Projects/1506_UtilityApp_Gover_Zachary/build/iphone/build/Debug-iphonesimulator/1506_UtilityApp_Gover_Zachary.app
+[DEBUG]  [ioslib] [ios-sim] [DEBUG] SDK Root: <DTiPhoneSimulatorSystemRoot 0x7fec1b92f3d0> path=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
+[DEBUG]  [ioslib] [ios-sim] [DEBUG] Creating named pipe at `/var/folders/01/tx145vt17bvd3hxgbx8l6rj00000gn/T//ios-sim-stderr-pipe-1435280494'
+[DEBUG]  [ioslib] [ios-sim] [DEBUG] Creating named pipe at `/var/folders/01/tx145vt17bvd3hxgbx8l6rj00000gn/T//ios-sim-stdout-pipe-1435280494'
 [DEBUG]  [ioslib] [ios-sim] [DEBUG] using device family iphone
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] Comparing 244CE10F-0635-4D8A-86DF-BF9C49A8436F == 86B15E53-AD6B-437B-AA0F-8AF48CD7A056
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] Comparing D03466FC-0DFF-49F5-98A4-01DFCE0F16CE == 86B15E53-AD6B-437B-AA0F-8AF48CD7A056
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] Comparing 29E5B37D-9B97-4322-BACF-08F493864661 == 86B15E53-AD6B-437B-AA0F-8AF48CD7A056
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] Comparing 564106A4-6F96-4383-9492-A83A8D3D74EF == 86B15E53-AD6B-437B-AA0F-8AF48CD7A056
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] Comparing 86B15E53-AD6B-437B-AA0F-8AF48CD7A056 == 86B15E53-AD6B-437B-AA0F-8AF48CD7A056
-[DEBUG]  [ioslib] [ios-sim] [DEBUG] set device to : iPhone 6
+[DEBUG]  [ioslib] [ios-sim] [DEBUG] Comparing 244CE10F-0635-4D8A-86DF-BF9C49A8436F == D03466FC-0DFF-49F5-98A4-01DFCE0F16CE
+[DEBUG]  [ioslib] [ios-sim] [DEBUG] Comparing D03466FC-0DFF-49F5-98A4-01DFCE0F16CE == D03466FC-0DFF-49F5-98A4-01DFCE0F16CE
+[DEBUG]  [ioslib] [ios-sim] [DEBUG] set device to : iPhone 5
 [DEBUG]  [ioslib] [ios-sim] [DEBUG] Session started
-[DEBUG]  [ioslib] Found application log file: /Users/Zachary/Library/Developer/CoreSimulator/Devices/86B15E53-AD6B-437B-AA0F-8AF48CD7A056/data/Containers/Data/Application/9369D17B-8F35-44AA-A28F-D904A401E9A2/Documents/57ab1f43-bade-4df9-9111-a81a81648ad4.log
-[INFO]   Project built successfully in 4s 644ms
+[DEBUG]  [ioslib] Found application log file: /Users/Zachary/Library/Developer/CoreSimulator/Devices/D03466FC-0DFF-49F5-98A4-01DFCE0F16CE/data/Containers/Data/Application/E0A34387-6D32-4C67-829C-7BD493E5794B/Documents/57ab1f43-bade-4df9-9111-a81a81648ad4.log
+[INFO]   Project built successfully in 6s 398ms
